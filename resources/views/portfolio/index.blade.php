@@ -5,8 +5,8 @@
 
 @section('content')
 <!-- Hero Section -->
-<div class="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-16">
-    <div class="container mx-auto text-center">
+<div style="background: linear-gradient(to right, #3b82f6, #9333ea); color: white; padding: 4rem 0;">
+    <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
         <h1 class="text-4xl font-bold mb-4">Real Projects, Real Results</h1>
         <p class="text-xl mb-6">Discover our portfolio of 13+ projects delivering exceptional value</p>
         <a href="#portfolio" class="bg-white text-blue-500 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">Explore Our Work</a>
@@ -14,8 +14,8 @@
 </div>
 
 <!-- Stats Section -->
-<div class="bg-white shadow-lg mx-4 -mt-8 relative z-10 rounded-lg">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-6">
+<div style="background: white; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); margin: 0 1rem; margin-top: -2rem; position: relative; z-index: 10; border-radius: 0.5rem;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; padding: 1.5rem;">
         <div class="text-center">
             <div class="text-3xl font-bold text-blue-500 mb-1">13+</div>
             <div class="text-sm text-gray-600">Active Projects</div>
@@ -32,14 +32,14 @@
 </div>
 
 <!-- Portfolio Grid -->
-<section id="portfolio" class="py-12 px-4">
-    <div class="container mx-auto">
+<section id="portfolio" style="padding: 3rem 1rem;">
+    <div style="max-width: 1200px; margin: 0 auto;">
         <div class="text-center mb-8">
             <h2 class="text-3xl font-bold text-base-content mb-2">Our Portfolio</h2>
             <p class="text-lg text-base-content/70 max-w-xl mx-auto">Explore our diverse range of successful projects</p>
         </div>
         
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
             @foreach($brands as $index => $brand)
             <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
                 <div class="text-center">
