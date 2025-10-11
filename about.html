@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - HelpfulSoftware</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .hero {
+            text-align: center;
+            color: white;
+            padding: 4rem 0;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+        .content {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 2rem 0;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #1a1a1a;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        h3 {
+            color: #667eea;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem 0;
+        }
+        p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        .team {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .member {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .member img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            object-fit: cover;
+            border: 4px solid rgba(255,255,255,0.3);
+        }
+        .member h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .member .role {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+        .values {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .value {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .cta {
+            text-align: center;
+            margin: 3rem 0;
+        }
+        .cta a {
+            display: inline-block;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+        .cta a:hover {
+            transform: translateY(-2px);
+        }
+        .nav {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            background: rgba(255,255,255,0.1);
+            transition: background 0.3s ease;
+        }
+        .nav a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="/">Portfolio</a>
+            <a href="/about.html">About</a>
+            <a href="/contact.html">Contact</a>
+        </div>
+        
+        <div class="hero">
+            <h1>About HelpfulSoftware</h1>
+            <p>Transforming businesses through innovative technology solutions</p>
+        </div>
+        
+        <div class="content">
+            <h2>Our Mission</h2>
+            <p>We specialize in creating custom web solutions for diverse industries including pet services, art portfolios, wellness platforms, and environmental services. Our 13+ projects (including 9+ active websites) demonstrate our ability to deliver functional, scalable solutions that drive real business results.</p>
+            
+            <h2>Leadership Team</h2>
+            <div class="team">
+                <div class="member">
+                    <img src="/favicons/profile_picture.jpeg" alt="James Eley">
+                    <h4>James Eley</h4>
+                    <div class="role">CEO / CTO</div>
+                    <p>Visionary leader driving technical innovation and strategic direction. Expert in full-stack development and scalable architecture solutions.</p>
+                </div>
+                
+                <div class="member">
+                    <img src="/favicons/pp.png" alt="Pete Sutherland">
+                    <h4>Pete Sutherland</h4>
+                    <div class="role">CMO</div>
+                    <p>Marketing strategist focused on brand growth and client acquisition. Specializes in digital marketing and business development initiatives.</p>
+                </div>
+            </div>
+            
+            <h2>Our Values</h2>
+            <div class="values">
+                <div class="value">
+                    <div class="value-icon">🚀</div>
+                    <h3>Innovation</h3>
+                    <p>We stay at the forefront of technology, implementing cutting-edge solutions that give our clients a competitive edge.</p>
+                </div>
+                <div class="value">
+                    <div class="value-icon">🎯</div>
+                    <h3>Results-Driven</h3>
+                    <p>Every project is measured against clear KPIs and business objectives to ensure maximum ROI for our clients.</p>
+                </div>
+                <div class="value">
+                    <div class="value-icon">🤝</div>
+                    <h3>Partnership</h3>
+                    <p>We work as an extension of your team, building long-term relationships based on trust and mutual success.</p>
+                </div>
+            </div>
+            
+            <div class="cta">
+                <a href="/contact.html">Get Started Today</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
