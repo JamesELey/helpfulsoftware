@@ -17,7 +17,7 @@
         <h2 style="font-size: 2.5rem; font-weight: 700; color: #1a1a1a; margin-bottom: 1.5rem;">Our Mission</h2>
         <p style="font-size: 1.2rem; color: #666; line-height: 1.6; max-width: 800px; margin: 0 auto;">
             We specialize in creating custom web solutions for diverse industries including pet services, 
-            art portfolios, wellness platforms, and environmental services. Our 13+ live projects demonstrate 
+            art portfolios, wellness platforms, and environmental services. Our 13+ projects (including 9+ active websites) demonstrate 
             our ability to deliver functional, scalable solutions that drive real business results.
         </p>
     </section>
