@@ -4,10 +4,22 @@
 @section('description', 'Explore our portfolio of successful brand partnerships and innovative solutions that drive business growth.')
 
 @section('content')
+<!-- Floating Particles Background -->
+<div class="particles-container">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+</div>
+
 <section class="hero">
     <div class="container">
         <h1 class="fade-in-up">Real Projects, Real Results</h1>
-        <p class="fade-in-up">Discover our portfolio of 9+ live websites delivering exceptional value across diverse industries</p>
+        <p class="fade-in-up">Discover our portfolio of 13+ projects delivering exceptional value across diverse industries</p>
         <a href="#portfolio" class="cta-button fade-in-up">Explore Our Work</a>
     </div>
 </section>
