@@ -5,19 +5,18 @@
 
 @section('content')
 <!-- Hero Section -->
-<div class="hero min-h-screen bg-gradient-to-br from-primary via-secondary to-accent">
-    <div class="hero-overlay bg-opacity-60"></div>
+<div class="hero bg-gradient-to-br from-primary via-secondary to-accent py-20">
     <div class="hero-content text-center text-neutral-content">
-        <div class="max-w-md">
-            <h1 class="mb-5 text-5xl font-bold animate-fade-in-up">Real Projects, Real Results</h1>
-            <p class="mb-5 text-xl animate-fade-in-up">Discover our portfolio of 13+ projects delivering exceptional value across diverse industries</p>
-            <a href="#portfolio" class="btn btn-primary btn-lg animate-bounce-slow">Explore Our Work</a>
+        <div class="max-w-2xl">
+            <h1 class="mb-5 text-4xl lg:text-5xl font-bold">Real Projects, Real Results</h1>
+            <p class="mb-5 text-lg lg:text-xl">Discover our portfolio of 13+ projects delivering exceptional value across diverse industries</p>
+            <a href="#portfolio" class="btn btn-primary btn-lg">Explore Our Work</a>
         </div>
     </div>
 </div>
 
 <!-- Stats Section -->
-<div class="stats stats-vertical lg:stats-horizontal shadow-xl bg-base-100 mx-4 -mt-20 relative z-10">
+<div class="stats stats-vertical lg:stats-horizontal shadow-xl bg-base-100 mx-4 -mt-10 relative z-10">
     <div class="stat">
         <div class="stat-figure text-primary">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current">
@@ -53,28 +52,28 @@
 </div>
 
 <!-- Portfolio Grid -->
-<section id="portfolio" class="py-20 px-4">
+<section id="portfolio" class="py-12 px-4">
     <div class="container mx-auto">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold text-base-content mb-4">Our Portfolio</h2>
-            <p class="text-xl text-base-content/70 max-w-2xl mx-auto">Explore our diverse range of successful projects across multiple industries</p>
+        <div class="text-center mb-8">
+            <h2 class="text-3xl font-bold text-base-content mb-2">Our Portfolio</h2>
+            <p class="text-lg text-base-content/70 max-w-xl mx-auto">Explore our diverse range of successful projects</p>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
             @foreach($brands as $index => $brand)
-            <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group animate-fade-in-up" style="animation-delay: {{ $index * 0.1 }}s;">
-                <figure class="px-6 pt-6">
-                    <div class="w-24 h-24 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                        <img src="{{ $brand->logo }}" alt="{{ $brand->name }}" class="w-16 h-16 object-contain rounded-lg bg-white p-2 shadow-md">
+            <div class="card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+                <figure class="px-4 pt-4">
+                    <div class="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300">
+                        <img src="{{ $brand->logo }}" alt="{{ $brand->name }}" class="w-12 h-12 object-contain rounded-lg bg-white p-1.5 shadow-sm">
                     </div>
                 </figure>
-                <div class="card-body items-center text-center p-6">
-                    <h2 class="card-title text-lg font-bold text-base-content mb-2">{{ $brand->name }}</h2>
-                    <p class="text-sm text-base-content/60 font-mono mb-4">{{ parse_url($brand->website_url, PHP_URL_HOST) }}</p>
+                <div class="card-body items-center text-center p-4">
+                    <h2 class="card-title text-sm font-bold text-base-content mb-1">{{ $brand->name }}</h2>
+                    <p class="text-xs text-base-content/60 font-mono mb-2">{{ parse_url($brand->website_url, PHP_URL_HOST) }}</p>
                     <div class="card-actions">
-                        <a href="{{ $brand->website_url }}" target="_blank" class="btn btn-primary btn-sm">
-                            Visit Site
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <a href="{{ $brand->website_url }}" target="_blank" class="btn btn-primary btn-xs">
+                            Visit
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                             </svg>
                         </a>
@@ -87,12 +86,12 @@
 </section>
 
 <!-- Call to Action -->
-<div class="hero bg-gradient-to-r from-primary to-secondary text-primary-content">
+<div class="hero bg-gradient-to-r from-primary to-secondary text-primary-content py-12">
     <div class="hero-content text-center">
         <div class="max-w-md">
-            <h1 class="mb-5 text-3xl font-bold">Ready to Work Together?</h1>
-            <p class="mb-5">Let's create something amazing for your business</p>
-            <a href="{{ route('portfolio.contact') }}" class="btn btn-accent btn-lg">Get Started</a>
+            <h1 class="mb-3 text-2xl font-bold">Ready to Work Together?</h1>
+            <p class="mb-4">Let's create something amazing for your business</p>
+            <a href="{{ route('portfolio.contact') }}" class="btn btn-accent">Get Started</a>
         </div>
     </div>
 </div>
