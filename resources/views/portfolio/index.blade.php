@@ -11,7 +11,7 @@
         padding: 20px;
     }
     .hero-section {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
         color: white;
         text-align: center;
         padding: 60px 20px;
@@ -20,6 +20,21 @@
         font-size: 2.5rem;
         font-weight: bold;
         margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+    .hero-logo {
+        width: 60px;
+        height: 60px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        backdrop-filter: blur(10px);
     }
     .hero-subtitle {
         font-size: 1.2rem;
@@ -60,75 +75,75 @@
     }
     .portfolio-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 20px;
-        max-width: 1400px;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 25px;
+        max-width: 1200px;
         margin: 0 auto;
+        padding: 40px 20px;
     }
     .portfolio-card {
-        background: white;
-        border-radius: 16px;
-        padding: 15px;
-        box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        background: transparent;
+        border-radius: 8px;
+        padding: 0;
+        box-shadow: none;
         text-align: center;
-        transition: transform 0.3s ease;
+        transition: transform 0.2s ease;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        min-height: 300px;
+        align-items: center;
         cursor: pointer;
         text-decoration: none;
         color: inherit;
+        width: 120px;
     }
     .portfolio-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+        transform: scale(1.05);
     }
     .card-image {
-        width: 180px;
-        height: 180px;
-        margin: 0 auto 15px;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        border-radius: 24px;
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 10px;
+        background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
+        border-radius: 16px;
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        box-shadow: 0 6px 16px rgba(255, 107, 107, 0.3);
         position: relative;
     }
     .card-image::before {
         content: '';
         position: absolute;
-        top: -3px;
-        left: -3px;
-        right: -3px;
-        bottom: -3px;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        border-radius: 27px;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
+        border-radius: 18px;
         z-index: -1;
-        opacity: 0.4;
+        opacity: 0.3;
     }
     .card-image img {
-        width: 160px;
-        height: 160px;
+        width: 80px;
+        height: 80px;
         object-fit: contain;
         background: white;
-        border-radius: 12px;
+        border-radius: 8px;
         padding: 6px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     }
     .card-title {
-        font-weight: bold;
-        margin-bottom: 10px;
-        font-size: 1.3rem;
+        font-weight: 500;
+        margin-bottom: 0;
+        font-size: 0.9rem;
         color: #1a1a1a;
+        text-align: center;
+        line-height: 1.2;
+        word-wrap: break-word;
+        hyphens: auto;
     }
     .card-domain {
-        font-size: 1rem;
-        color: #666;
-        margin-bottom: 0;
-        font-family: monospace;
-        font-weight: 500;
+        display: none;
     }
     .cta-section {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -150,7 +165,10 @@
 
 <div class="hero-section">
     <div class="portfolio-container">
-        <h1 class="hero-title">HelpfulSoftware Portfolio</h1>
+        <h1 class="hero-title">
+            <div class="hero-logo">♥</div>
+            HelpfulSoftware Portfolio
+        </h1>
     </div>
 </div>
 
@@ -162,7 +180,6 @@
                 <img src="{{ $brand->logo }}" alt="{{ $brand->name }}">
             </div>
             <h3 class="card-title">{{ $brand->name }}</h3>
-            <p class="card-domain">{{ parse_url($brand->website_url, PHP_URL_HOST) }}</p>
         </a>
         @endforeach
     </div>

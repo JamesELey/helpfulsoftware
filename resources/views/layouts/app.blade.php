@@ -48,6 +48,19 @@
             font-weight: 700;
             color: #667eea;
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
         }
         .nav-links {
             display: flex;
@@ -87,7 +100,10 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="{{ route('portfolio.index') }}" class="logo">HelpfulSoftware</a>
+            <a href="{{ route('portfolio.index') }}" class="logo">
+                <div class="logo-icon">♥</div>
+                HelpfulSoftware
+            </a>
             <ul class="nav-links">
                 <li><a href="{{ route('portfolio.index') }}">Portfolio</a></li>
                 <li><a href="{{ route('portfolio.about') }}">About</a></li>
