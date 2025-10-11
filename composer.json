@@ -34,10 +34,12 @@
     },
     "scripts": {
         "post-autoload-dump": [
+            "@deploy:permissions",
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
         ],
         "post-update-cmd": [
+            "@deploy:permissions",
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
         ],
         "post-root-package-install": [
