@@ -2,6 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Force image sizing to prevent layout breaking */
+.portfolio-card img {
+    width: 48px !important;
+    height: 48px !important;
+    max-width: 48px !important;
+    max-height: 48px !important;
+    object-fit: contain !important;
+}
+
+.portfolio-card {
+    max-width: 200px !important;
+    height: auto !important;
+    overflow: hidden !important;
+}
+
+.portfolio-card figure {
+    max-height: 80px !important;
+    overflow: hidden !important;
+}
+
+.portfolio-card .card-body {
+    padding: 1rem !important;
+    max-height: 120px !important;
+    overflow: hidden !important;
+}
+
 /* Additional Portfolio Styles */
 .portfolio-hero {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);

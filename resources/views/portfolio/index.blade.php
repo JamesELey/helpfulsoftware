@@ -61,10 +61,10 @@
         
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
             @foreach($brands as $index => $brand)
-            <div class="card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+            <div class="card portfolio-card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
                 <figure class="px-4 pt-4">
-                    <div class="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300">
-                        <img src="{{ $brand->logo }}" alt="{{ $brand->name }}" class="w-12 h-12 object-contain rounded-lg bg-white p-1.5 shadow-sm">
+                    <div class="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300 overflow-hidden">
+                        <img src="{{ $brand->logo }}" alt="{{ $brand->name }}" class="w-12 h-12 object-contain rounded-lg bg-white p-1.5 shadow-sm max-w-full max-h-full">
                     </div>
                 </figure>
                 <div class="card-body items-center text-center p-4">
