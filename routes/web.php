@@ -7,3 +7,12 @@ Route::get('/', [PortfolioController::class, 'index'])->name('portfolio.index');
 Route::get('/brand/{brand}', [PortfolioController::class, 'show'])->name('portfolio.show');
 Route::get('/about', [PortfolioController::class, 'about'])->name('portfolio.about');
 Route::get('/contact', [PortfolioController::class, 'contact'])->name('portfolio.contact');
+
+// Diagnostic routes
+Route::get('/test', function () {
+    return 'Laravel is working!';
+});
+
+Route::get('/diagnose', function () {
+    return file_get_contents('diagnose.php');
+});
