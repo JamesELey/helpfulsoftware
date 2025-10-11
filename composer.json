@@ -91,6 +91,46 @@
             "@deploy:migrate",
             "@deploy:seed",
             "@deploy:cache"
+        ],
+        "setup:server": [
+            "@php -r \"echo '🚀 Setting up HelpfulSoftware Portfolio...' . PHP_EOL;\"",
+            "@deploy:permissions",
+            "@php artisan config:clear",
+            "@php artisan cache:clear",
+            "@php artisan view:clear",
+            "@php artisan route:clear",
+            "@deploy:migrate",
+            "@deploy:seed",
+            "@deploy:cache",
+            "@php -r \"echo PHP_EOL . '✅ Server setup completed!' . PHP_EOL;\""
+        ],
+        "test:server": [
+            "@php -r \"echo '🧪 Testing server configuration...' . PHP_EOL;\"",
+            "@php -r \"echo 'PHP Version: ' . phpversion() . PHP_EOL;\"",
+            "@php -r \"echo 'Laravel Version: ';\"",
+            "@php artisan --version",
+            "@php -r \"echo 'Available routes:' . PHP_EOL;\"",
+            "@php artisan route:list"
+        ],
+        "fix:routes": [
+            "@php -r \"echo '🔧 Fixing Laravel routing...' . PHP_EOL;\"",
+            "@php artisan config:clear",
+            "@php artisan cache:clear",
+            "@php artisan view:clear",
+            "@php artisan route:clear",
+            "@php artisan route:cache",
+            "@php -r \"echo '✅ Route fix completed!' . PHP_EOL;\""
+        ],
+        "diagnose": [
+            "@php -r \"echo '🔍 Running server diagnostic...' . PHP_EOL;\"",
+            "@php -r \"echo 'Current directory: ' . getcwd() . PHP_EOL;\"",
+            "@php -r \"echo 'Laravel files exist: ' . (file_exists('artisan') ? 'Yes' : 'No') . PHP_EOL;\"",
+            "@php -r \"echo 'Composer files exist: ' . (file_exists('composer.json') ? 'Yes' : 'No') . PHP_EOL;\"",
+            "@php -r \"echo '.env file exists: ' . (file_exists('.env') ? 'Yes' : 'No') . PHP_EOL;\"",
+            "@php -r \"echo 'About view exists: ' . (file_exists('resources/views/portfolio/about.blade.php') ? 'Yes' : 'No') . PHP_EOL;\"",
+            "@php -r \"echo 'Storage writable: ' . (is_writable('storage') ? 'Yes' : 'No') . PHP_EOL;\"",
+            "@php -r \"echo 'Bootstrap cache writable: ' . (is_writable('bootstrap/cache') ? 'Yes' : 'No') . PHP_EOL;\"",
+            "@php artisan --version"
         ]
     },
     "extra": {
