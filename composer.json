@@ -45,6 +45,50 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
+        ],
+        "deploy": [
+            "@deploy:permissions",
+            "@deploy:clear",
+            "@deploy:migrate",
+            "@deploy:seed",
+            "@deploy:cache"
+        ],
+        "deploy:permissions": [
+            "@php -r \"if (!is_dir('bootstrap/cache')) mkdir('bootstrap/cache', 0755, true);\"",
+            "@php -r \"if (!is_dir('storage/framework/cache')) mkdir('storage/framework/cache', 0755, true);\"",
+            "@php -r \"if (!is_dir('storage/framework/sessions')) mkdir('storage/framework/sessions', 0755, true);\"",
+            "@php -r \"if (!is_dir('storage/framework/views')) mkdir('storage/framework/views', 0755, true);\"",
+            "@php -r \"if (!is_dir('storage/logs')) mkdir('storage/logs', 0755, true);\""
+        ],
+        "deploy:clear": [
+            "@php artisan config:clear",
+            "@php artisan cache:clear",
+            "@php artisan view:clear",
+            "@php artisan route:clear"
+        ],
+        "deploy:migrate": [
+            "@php artisan migrate --force"
+        ],
+        "deploy:seed": [
+            "@php artisan db:seed --class=RealProjectSeeder --force"
+        ],
+        "deploy:cache": [
+            "@php artisan config:cache",
+            "@php artisan route:cache",
+            "@php artisan view:cache"
+        ],
+        "deploy:quick": [
+            "@deploy:clear",
+            "@deploy:migrate",
+            "@deploy:seed",
+            "@deploy:cache"
+        ],
+        "deploy:production": [
+            "@deploy:permissions",
+            "@deploy:clear",
+            "@deploy:migrate",
+            "@deploy:seed",
+            "@deploy:cache"
         ]
     },
     "extra": {

@@ -31,8 +31,8 @@ if ($data['ref'] === 'refs/heads/main') {
         FILE_APPEND
     );
     
-    // Execute the deployment script
-    $output = shell_exec('bash /var/www/vhosts/thebinday.co.uk/httpdocs/deploy.sh 2>&1');
+    // Execute the deployment script using Composer
+    $output = shell_exec('cd /var/www/vhosts/thebinday.co.uk/httpdocs && git pull origin main && composer install --no-dev --optimize-autoloader && composer run-script deploy 2>&1');
     
     // Log the output
     file_put_contents('/var/www/vhosts/thebinday.co.uk/httpdocs/deployment.log', 

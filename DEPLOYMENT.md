@@ -2,18 +2,33 @@
 
 ## Quick Deploy (After Git Pull)
 
-### Option 1: Manual Deploy
+### Option 1: Composer Deploy (RECOMMENDED)
 ```bash
 # After pulling from Git
 git pull origin main
 
-# Run the quick deploy script
-./quick-deploy.sh
+# Run Composer deployment
+composer run-script deploy:quick
 ```
 
-### Option 2: Full Deploy
+### Option 2: One-Liner Deploy
 ```bash
-# Run the full deployment script
+# Super simple - just run this
+./deploy-simple.sh
+```
+
+### Option 3: Full Composer Deploy
+```bash
+# Full deployment with Composer
+./deploy-composer.sh
+```
+
+### Option 4: Manual Scripts
+```bash
+# Quick deploy script
+./quick-deploy.sh
+
+# Full deploy script
 ./deploy.sh
 ```
 
@@ -105,25 +120,42 @@ php artisan view:clear
 php artisan route:clear
 ```
 
+## Composer Deployment Scripts
+
+### Available Composer Commands
+```bash
+# Full deployment (permissions + clear + migrate + seed + cache)
+composer run-script deploy
+
+# Quick deployment (clear + migrate + seed + cache)
+composer run-script deploy:quick
+
+# Production deployment (same as deploy)
+composer run-script deploy:production
+
+# Individual steps
+composer run-script deploy:permissions  # Create directories
+composer run-script deploy:clear        # Clear all caches
+composer run-script deploy:migrate      # Run migrations
+composer run-script deploy:seed         # Seed database
+composer run-script deploy:cache        # Cache for production
+```
+
 ## What Each Script Does
 
-### `deploy.sh` (Full Deploy)
-- Pulls latest changes from Git
-- Installs Composer dependencies
-- Creates necessary directories
-- Sets proper permissions
-- Clears all caches
-- Runs migrations
-- Seeds database
-- Caches configuration for production
+### Composer Scripts (RECOMMENDED)
+- **`deploy`**: Full deployment with permissions, clearing, migration, seeding, and caching
+- **`deploy:quick`**: Quick deployment without permission setup
+- **`deploy:production`**: Same as deploy, optimized for production
+- **Individual scripts**: Run specific deployment steps
 
-### `quick-deploy.sh` (Quick Deploy)
-- Installs dependencies
-- Clears caches
-- Runs migrations and seeds
-- Caches configuration
+### Shell Scripts
+- **`deploy-composer.sh`**: Uses Composer scripts for deployment
+- **`deploy-simple.sh`**: One-liner: git pull + composer install + deploy:quick
+- **`deploy.sh`**: Full deployment with shell commands
+- **`quick-deploy.sh`**: Quick deployment with shell commands
 
 ### `webhook-deploy.php` (Auto Deploy)
 - Verifies GitHub webhook signature
-- Triggers deployment on push to main branch
+- Triggers Composer-based deployment on push to main branch
 - Logs deployment activity
