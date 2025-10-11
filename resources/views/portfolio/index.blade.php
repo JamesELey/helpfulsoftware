@@ -4,66 +4,194 @@
 @section('description', 'Explore our portfolio of successful brand partnerships and innovative solutions that drive business growth.')
 
 @section('content')
-<!-- Hero Section -->
-<div style="background: linear-gradient(to right, #3b82f6, #9333ea); color: white; padding: 4rem 0;">
-    <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
-        <h1 class="text-4xl font-bold mb-4">Real Projects, Real Results</h1>
-        <p class="text-xl mb-6">Discover our portfolio of 13+ projects delivering exceptional value</p>
-        <a href="#portfolio" class="bg-white text-blue-500 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">Explore Our Work</a>
+<style>
+    .portfolio-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .hero-section {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        text-align: center;
+        padding: 60px 20px;
+    }
+    .hero-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    .hero-subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        opacity: 0.9;
+    }
+    .cta-button {
+        background: white;
+        color: #667eea;
+        padding: 12px 24px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-block;
+    }
+    .stats-section {
+        background: white;
+        margin: -30px 20px 40px;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .stat-item {
+        text-align: center;
+        margin: 10px;
+    }
+    .stat-number {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    .stat-label {
+        font-size: 0.9rem;
+        color: #666;
+    }
+    .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    .portfolio-card {
+        background: white;
+        border-radius: 16px;
+        padding: 15px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        text-align: center;
+        transition: transform 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 300px;
+        cursor: pointer;
+        text-decoration: none;
+        color: inherit;
+    }
+    .portfolio-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+    }
+    .card-image {
+        width: 180px;
+        height: 180px;
+        margin: 0 auto 15px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        position: relative;
+    }
+    .card-image::before {
+        content: '';
+        position: absolute;
+        top: -3px;
+        left: -3px;
+        right: -3px;
+        bottom: -3px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 27px;
+        z-index: -1;
+        opacity: 0.4;
+    }
+    .card-image img {
+        width: 160px;
+        height: 160px;
+        object-fit: contain;
+        background: white;
+        border-radius: 12px;
+        padding: 6px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    }
+    .card-title {
+        font-weight: bold;
+        margin-bottom: 10px;
+        font-size: 1.3rem;
+        color: #1a1a1a;
+    }
+    .card-domain {
+        font-size: 1rem;
+        color: #666;
+        margin-bottom: 0;
+        font-family: monospace;
+        font-weight: 500;
+    }
+    .cta-section {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        text-align: center;
+        padding: 60px 20px;
+        margin-top: 60px;
+    }
+    .cta-title {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+    .cta-text {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+    }
+</style>
+
+<div class="hero-section">
+    <div class="portfolio-container">
+        <h1 class="hero-title">Real Projects, Real Results</h1>
+        <p class="hero-subtitle">Discover our portfolio of 13+ projects delivering exceptional value</p>
+        <a href="#portfolio" class="cta-button">Explore Our Work</a>
     </div>
 </div>
 
-<!-- Stats Section -->
-<div style="background: white; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); margin: 0 1rem; margin-top: -2rem; position: relative; z-index: 10; border-radius: 0.5rem;">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; padding: 1.5rem;">
-        <div class="text-center">
-            <div class="text-3xl font-bold text-blue-500 mb-1">13+</div>
-            <div class="text-sm text-gray-600">Active Projects</div>
-        </div>
-        <div class="text-center">
-            <div class="text-3xl font-bold text-purple-500 mb-1">8+</div>
-            <div class="text-sm text-gray-600">Industries</div>
-        </div>
-        <div class="text-center">
-            <div class="text-3xl font-bold text-green-500 mb-1">100%</div>
-            <div class="text-sm text-gray-600">Success Rate</div>
-        </div>
+<div class="stats-section">
+    <div class="stat-item">
+        <div class="stat-number" style="color: #667eea;">13+</div>
+        <div class="stat-label">Active Projects</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-number" style="color: #764ba2;">8+</div>
+        <div class="stat-label">Industries</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-number" style="color: #28a745;">100%</div>
+        <div class="stat-label">Success Rate</div>
     </div>
 </div>
 
-<!-- Portfolio Grid -->
-<section id="portfolio" style="padding: 3rem 1rem;">
-    <div style="max-width: 1200px; margin: 0 auto;">
-        <div class="text-center mb-8">
-            <h2 class="text-3xl font-bold text-base-content mb-2">Our Portfolio</h2>
-            <p class="text-lg text-base-content/70 max-w-xl mx-auto">Explore our diverse range of successful projects</p>
-        </div>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
-            @foreach($brands as $index => $brand)
-            <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
-                <div class="text-center">
-                    <div class="w-16 h-16 mx-auto mb-3 bg-gray-100 rounded-lg flex items-center justify-center">
-                        <img src="{{ $brand->logo }}" alt="{{ $brand->name }}" style="width: 48px; height: 48px; object-fit: contain;" class="max-w-full max-h-full">
-                    </div>
-                    <h3 class="font-bold text-sm mb-1">{{ $brand->name }}</h3>
-                    <p class="text-xs text-gray-600 mb-2">{{ parse_url($brand->website_url, PHP_URL_HOST) }}</p>
-                    <a href="{{ $brand->website_url }}" target="_blank" class="inline-block bg-blue-500 text-white text-xs px-3 py-1 rounded hover:bg-blue-600 transition-colors">
-                        Visit Site
-                    </a>
-                </div>
+<section id="portfolio" class="portfolio-container">
+    <h2 style="text-align: center; font-size: 2rem; margin-bottom: 40px;">Our Portfolio</h2>
+    
+    <div class="portfolio-grid">
+        @foreach($brands as $brand)
+        <a href="{{ $brand->website_url }}" target="_blank" class="portfolio-card">
+            <div class="card-image">
+                <img src="{{ $brand->logo }}" alt="{{ $brand->name }}">
             </div>
-            @endforeach
-        </div>
+            <h3 class="card-title">{{ $brand->name }}</h3>
+            <p class="card-domain">{{ parse_url($brand->website_url, PHP_URL_HOST) }}</p>
+        </a>
+        @endforeach
     </div>
 </section>
 
-<!-- Call to Action -->
-<div class="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-12">
-    <div class="container mx-auto text-center">
-        <h2 class="text-2xl font-bold mb-3">Ready to Work Together?</h2>
-        <p class="mb-4">Let's create something amazing for your business</p>
-        <a href="{{ route('portfolio.contact') }}" class="bg-white text-blue-500 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">Get Started</a>
+<div class="cta-section">
+    <div class="portfolio-container">
+        <h2 class="cta-title">Ready to Work Together?</h2>
+        <p class="cta-text">Let's create something amazing for your business</p>
+        <a href="{{ route('portfolio.contact') }}" class="cta-button">Get Started</a>
     </div>
 </div>
 @endsection
