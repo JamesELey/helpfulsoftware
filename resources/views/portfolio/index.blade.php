@@ -14,7 +14,19 @@
         background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
         color: white;
         text-align: center;
-        padding: 15px 20px;
+        padding: 40px 20px;
+        position: relative;
+        overflow: hidden;
+    }
+    .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+        pointer-events: none;
     }
     .hero-content {
         display: flex;
@@ -22,12 +34,52 @@
         align-items: center;
         justify-content: center;
         text-align: center;
+        position: relative;
+        z-index: 1;
     }
     .hero-logo {
-        height: 200px;
+        height: 280px;
         width: auto;
         object-fit: contain;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
+        filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.3));
+        animation: logoGlow 3s ease-in-out infinite alternate;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 70%, transparent 100%);
+        border-radius: 50px;
+        padding: 40px;
+        backdrop-filter: blur(5px);
+        border: none;
+        position: relative;
+    }
+    .hero-logo::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
+        border-radius: 60px;
+        z-index: -1;
+        animation: pixelDust 4s ease-in-out infinite alternate;
+    }
+    @keyframes pixelDust {
+        from {
+            opacity: 0.3;
+            transform: scale(0.95);
+        }
+        to {
+            opacity: 0.6;
+            transform: scale(1.05);
+        }
+    }
+    @keyframes logoGlow {
+        from {
+            filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.3)) drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
+        }
+        to {
+            filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.4)) drop-shadow(0 0 30px rgba(255, 255, 255, 0.4));
+        }
     }
     .hero-title {
         font-size: 1.2rem;
