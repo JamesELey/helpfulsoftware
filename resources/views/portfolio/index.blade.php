@@ -14,27 +14,26 @@
         background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
         color: white;
         text-align: center;
-        padding: 60px 20px;
+        padding: 15px 20px;
     }
-    .hero-title {
-        font-size: 2.5rem;
-        font-weight: bold;
-        margin-bottom: 20px;
+    .hero-content {
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 15px;
+        text-align: center;
     }
     .hero-logo {
-        width: 60px;
-        height: 60px;
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 32px;
-        backdrop-filter: blur(10px);
+        height: 200px;
+        width: auto;
+        object-fit: contain;
+        margin-bottom: 10px;
+    }
+    .hero-title {
+        font-size: 1.2rem;
+        font-weight: 400;
+        margin-bottom: 0;
+        opacity: 0.9;
     }
     .hero-subtitle {
         font-size: 1.2rem;
@@ -75,9 +74,9 @@
     }
     .portfolio-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 25px;
-        max-width: 1200px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        max-width: 1600px;
         margin: 0 auto;
         padding: 40px 20px;
     }
@@ -94,43 +93,43 @@
         cursor: pointer;
         text-decoration: none;
         color: inherit;
-        width: 120px;
+        width: 170px;
     }
     .portfolio-card:hover {
         transform: scale(1.05);
     }
     .card-image {
-        width: 100px;
-        height: 100px;
-        margin: 0 auto 10px;
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 15px;
         background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
-        border-radius: 16px;
+        border-radius: 24px;
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 6px 16px rgba(255, 107, 107, 0.3);
+        box-shadow: 0 10px 25px rgba(255, 107, 107, 0.3);
         position: relative;
     }
     .card-image::before {
         content: '';
         position: absolute;
-        top: -2px;
-        left: -2px;
-        right: -2px;
-        bottom: -2px;
+        top: -4px;
+        left: -4px;
+        right: -4px;
+        bottom: -4px;
         background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
-        border-radius: 18px;
+        border-radius: 28px;
         z-index: -1;
         opacity: 0.3;
     }
     .card-image img {
-        width: 80px;
-        height: 80px;
+        width: 130px;
+        height: 130px;
         object-fit: contain;
         background: white;
-        border-radius: 8px;
-        padding: 6px;
-        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        border-radius: 12px;
+        padding: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
     .card-title {
         font-weight: 500;
@@ -165,10 +164,10 @@
 
 <div class="hero-section">
     <div class="portfolio-container">
-        <h1 class="hero-title">
-            <div class="hero-logo">♥</div>
-            HelpfulSoftware Portfolio
-        </h1>
+        <div class="hero-content">
+            <img src="{{ asset('images/logo_02.png') }}" alt="HelpfulSoftware" class="hero-logo">
+            <h1 class="hero-title">Software that helps</h1>
+        </div>
     </div>
 </div>
 

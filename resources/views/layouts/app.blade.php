@@ -8,6 +8,11 @@
     <title>@yield('title', 'HelpfulSoftware Portfolio')</title>
     <meta name="description" content="@yield('description', 'Professional portfolio showcasing our work with 13+ leading brands. Discover our innovative solutions and proven track record.')">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ asset('favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+    <link rel="apple-touch-icon" href="{{ asset('favicon.ico') }}">
+    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700&display=swap" rel="stylesheet" />
@@ -46,21 +51,16 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #667eea;
+            color: #2F7C7C;
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
-        .logo-icon {
-            width: 32px;
-            height: 32px;
-            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
+        .logo img {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
         }
         .nav-links {
             display: flex;
@@ -68,13 +68,58 @@
             gap: 2rem;
         }
         .nav-links a {
-            color: #1a1a1a;
+            color: #2F7C7C;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
         .nav-links a:hover {
-            color: #667eea;
+            color: #F78070;
+        }
+        .nav-links a:hover::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: linear-gradient(180deg, 
+                transparent 0%, 
+                rgba(255, 107, 107, 0.1) 20%, 
+                rgba(78, 205, 196, 0.1) 40%, 
+                rgba(255, 107, 107, 0.1) 60%, 
+                rgba(78, 205, 196, 0.1) 80%, 
+                transparent 100%);
+            background-size: 4px 4px;
+            animation: pixelDust 1.5s ease-out forwards;
+            pointer-events: none;
+        }
+        @keyframes pixelDust {
+            0% { 
+                transform: translateY(-100%); 
+                opacity: 0;
+            }
+            20% { 
+                opacity: 1;
+            }
+            100% { 
+                transform: translateY(100%); 
+                opacity: 0;
+            }
+        }
+        .cta-button {
+            background: #F78070;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+        .cta-button:hover {
+            background: #e66b5a;
         }
         .main-content {
             margin-top: 80px;
@@ -101,14 +146,14 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="{{ route('portfolio.index') }}" class="logo">
-                <div class="logo-icon">♥</div>
-                HelpfulSoftware
+                <img src="{{ asset('images/hs_nav_01.png') }}" alt="HelpfulSoftware">
             </a>
             <ul class="nav-links">
                 <li><a href="{{ route('portfolio.index') }}">Portfolio</a></li>
                 <li><a href="{{ route('portfolio.about') }}">About</a></li>
                 <li><a href="{{ route('portfolio.contact') }}">Contact</a></li>
             </ul>
+            <a href="{{ route('portfolio.contact') }}" class="cta-button">Get Started</a>
         </div>
     </nav>
 
