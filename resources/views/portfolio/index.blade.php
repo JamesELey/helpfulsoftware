@@ -44,7 +44,7 @@
         margin-bottom: 20px;
         filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.3));
         animation: logoGlow 3s ease-in-out infinite alternate;
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 70%, transparent 100%);
+        background: radial-gradient(circle, rgba(245, 223, 186, 0.8) 0%, rgba(245, 223, 186, 0.4) 70%, transparent 100%);
         border-radius: 50px;
         padding: 40px;
         backdrop-filter: blur(5px);
@@ -58,7 +58,7 @@
         left: -10px;
         right: -10px;
         bottom: -10px;
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 60%);
         border-radius: 60px;
         z-index: -1;
         animation: pixelDust 4s ease-in-out infinite alternate;
