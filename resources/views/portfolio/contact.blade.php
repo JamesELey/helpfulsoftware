@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
-@section('title', 'Contact Us - HelpfulSoftware')
-@section('description', 'Get in touch with HelpfulSoftware. Send us a message and we will get back to you soon.')
+@section('title', 'Contact Us - HelpfulSoftware | Get Your Project Started')
+@section('description', 'Contact HelpfulSoftware for custom software development. Get in touch via our contact form or email sutherlandeley@gmail.com. We respond within 24 hours.')
+@section('keywords', 'contact, software development, custom software, web development, technology solutions, get started, consultation')
+@section('og_image', asset('images/logo_02.png'))
 
 @section('content')
 <style>

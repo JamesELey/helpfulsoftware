@@ -7,15 +7,52 @@
     
     <title>@yield('title', 'HelpfulSoftware Portfolio')</title>
     <meta name="description" content="@yield('description', 'Professional portfolio showcasing our work with 13+ leading brands. Discover our innovative solutions and proven track record.')">
+    <meta name="keywords" content="@yield('keywords', 'software development, web development, portfolio, technology solutions, brand partnerships, custom software, Laravel, PHP, web applications')">
+    <meta name="author" content="HelpfulSoftware">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{ url()->current() }}">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="@yield('title', 'HelpfulSoftware Portfolio')">
+    <meta property="og:description" content="@yield('description', 'Professional portfolio showcasing our work with 13+ leading brands. Discover our innovative solutions and proven track record.')">
+    <meta property="og:image" content="@yield('og_image', asset('images/logo_02.png'))">
+    <meta property="og:site_name" content="HelpfulSoftware">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ url()->current() }}">
+    <meta property="twitter:title" content="@yield('title', 'HelpfulSoftware Portfolio')">
+    <meta property="twitter:description" content="@yield('description', 'Professional portfolio showcasing our work with 13+ leading brands. Discover our innovative solutions and proven track record.')">
+    <meta property="twitter:image" content="@yield('og_image', asset('images/logo_02.png'))">
+    <meta property="twitter:creator" content="@helpfulsoftware">
+    <meta property="twitter:site" content="@helpfulsoftware">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{ asset('favicon.ico') }}">
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
     <link rel="apple-touch-icon" href="{{ asset('favicon.ico') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('favicon.ico') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon.ico') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon.ico') }}">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700&display=swap" rel="stylesheet" />
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#2F7C7C">
+    <meta name="msapplication-TileColor" content="#2F7C7C">
+    <meta name="application-name" content="HelpfulSoftware">
+    <meta name="apple-mobile-web-app-title" content="HelpfulSoftware">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="{{ asset('images/logo_02.png') }}" as="image">
+    <link rel="dns-prefetch" href="//fonts.bunny.net">
     
     <style>
         * {
@@ -140,6 +177,34 @@
     </style>
     
     @stack('styles')
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "HelpfulSoftware",
+        "url": "{{ url('/') }}",
+        "logo": "{{ asset('images/logo_02.png') }}",
+        "description": "Professional software development company specializing in custom web applications and technology solutions for businesses.",
+        "foundingDate": "2020",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "email": "sutherlandeley@gmail.com"
+        },
+        "sameAs": [
+            "https://github.com/JamesELey/helpfulsoftware",
+            "https://linkedin.com/company/helpfulsoftware"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "GB"
+        }
+    }
+    </script>
+    
+    @yield('structured_data')
 </head>
 <body>
     <!-- Navigation -->
@@ -165,7 +230,33 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="nav-container">
-            <p>&copy; {{ date('Y') }} HelpfulSoftware. All rights reserved.</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div>
+                    <h3 style="color: white; margin-bottom: 1rem; font-size: 1.2rem;">Quick Links</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.5rem;"><a href="{{ route('portfolio.index') }}" style="color: #ccc; text-decoration: none;">Portfolio</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="{{ route('portfolio.about') }}" style="color: #ccc; text-decoration: none;">About Us</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="{{ route('portfolio.contact') }}" style="color: #ccc; text-decoration: none;">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: white; margin-bottom: 1rem; font-size: 1.2rem;">Services</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.5rem;"><span style="color: #ccc;">Web Development</span></li>
+                        <li style="margin-bottom: 0.5rem;"><span style="color: #ccc;">Mobile Apps</span></li>
+                        <li style="margin-bottom: 0.5rem;"><span style="color: #ccc;">Cloud Solutions</span></li>
+                        <li style="margin-bottom: 0.5rem;"><span style="color: #ccc;">DevOps</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: white; margin-bottom: 1rem; font-size: 1.2rem;">Contact Info</h3>
+                    <p style="color: #ccc; margin-bottom: 0.5rem;">Email: <a href="mailto:sutherlandeley@gmail.com" style="color: #4ecdc4;">sutherlandeley@gmail.com</a></p>
+                    <p style="color: #ccc; margin-bottom: 0.5rem;">Location: United Kingdom</p>
+                </div>
+            </div>
+            <div style="border-top: 1px solid #444; padding-top: 1rem; text-align: center;">
+                <p style="color: #ccc; margin: 0;">&copy; {{ date('Y') }} HelpfulSoftware. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 

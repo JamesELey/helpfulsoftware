@@ -4,12 +4,20 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\SitemapController;
 
 Route::get('/', [PortfolioController::class, 'index'])->name('portfolio.index');
 Route::get('/brand/{brand}', [PortfolioController::class, 'show'])->name('portfolio.show');
 Route::get('/about', [PortfolioController::class, 'about'])->name('portfolio.about');
 Route::get('/contact', [PortfolioController::class, 'contact'])->name('portfolio.contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+
+// SEO routes
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
+Route::get('/robots.txt', function () {
+    return response("User-agent: *\nAllow: /\n\n# Sitemap\nSitemap: " . url('/sitemap.xml') . "\n\n# Disallow admin areas\nDisallow: /admin/\nDisallow: /admin/login\nDisallow: /admin/dashboard\n\n# Allow all other content\nAllow: /\nAllow: /about\nAllow: /contact\nAllow: /brand/", 200)
+        ->header('Content-Type', 'text/plain');
+})->name('robots');
 
 // Admin routes
 Route::prefix('admin')->group(function () {

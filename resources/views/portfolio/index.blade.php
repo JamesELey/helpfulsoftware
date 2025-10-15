@@ -1,7 +1,46 @@
 @extends('layouts.app')
 
-@section('title', 'Portfolio - HelpfulSoftware')
-@section('description', 'Explore our portfolio of successful brand partnerships and innovative solutions that drive business growth.')
+@section('title', 'Portfolio - HelpfulSoftware | 13+ Successful Brand Partnerships')
+@section('description', 'Explore our portfolio of 13+ successful brand partnerships and innovative technology solutions. See how we helped businesses achieve 300% efficiency gains and 98% customer satisfaction.')
+@section('keywords', 'portfolio, brand partnerships, software development, technology solutions, case studies, business growth, custom software, web applications')
+@section('og_image', asset('images/logo_02.png'))
+
+@section('structured_data')
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "HelpfulSoftware Portfolio",
+    "description": "Portfolio showcasing 13+ successful brand partnerships and innovative technology solutions",
+    "url": "{{ url('/') }}",
+    "mainEntity": {
+        "@type": "ItemList",
+        "name": "Brand Partnerships",
+        "description": "Successful technology solutions and brand partnerships",
+        "numberOfItems": {{ $brands->count() }},
+        "itemListElement": [
+            @foreach($brands as $index => $brand)
+            {
+                "@type": "ListItem",
+                "position": {{ $index + 1 }},
+                "item": {
+                    "@type": "CreativeWork",
+                    "name": "{{ $brand->name }}",
+                    "description": "{{ $brand->short_description }}",
+                    "url": "{{ $brand->website_url }}",
+                    "image": "{{ $brand->logo }}",
+                    "creator": {
+                        "@type": "Organization",
+                        "name": "HelpfulSoftware"
+                    }
+                }
+            }{{ $index < $brands->count() - 1 ? ',' : '' }}
+            @endforeach
+        ]
+    }
+}
+</script>
+@endsection
 
 @section('content')
 <style>
@@ -217,18 +256,19 @@
 <div class="hero-section">
     <div class="portfolio-container">
         <div class="hero-content">
-            <img src="{{ asset('images/logo_02.png') }}" alt="HelpfulSoftware" class="hero-logo">
+            <img src="{{ asset('images/logo_02.png') }}" alt="HelpfulSoftware" class="hero-logo" loading="eager" width="280" height="280">
             <h1 class="hero-title">Software that helps</h1>
         </div>
     </div>
 </div>
 
 <section id="portfolio" class="portfolio-container">
+    <h2 style="text-align: center; font-size: 2.5rem; font-weight: 700; color: #333; margin-bottom: 3rem;">Our Portfolio</h2>
     <div class="portfolio-grid">
         @foreach($brands as $brand)
         <a href="{{ $brand->website_url }}" target="_blank" class="portfolio-card">
             <div class="card-image">
-                <img src="{{ $brand->logo }}" alt="{{ $brand->name }}">
+                <img src="{{ $brand->logo }}" alt="{{ $brand->name }}" loading="lazy" width="130" height="130">
             </div>
             <h3 class="card-title">{{ $brand->name }}</h3>
         </a>

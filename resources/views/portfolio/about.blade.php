@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
-@section('title', 'About Us - HelpfulSoftware')
-@section('description', 'Learn about HelpfulSoftware\'s mission to transform businesses through innovative technology solutions.')
+@section('title', 'About Us - HelpfulSoftware | Transforming Businesses Through Technology')
+@section('description', 'Learn about HelpfulSoftware\'s mission to transform businesses through innovative technology solutions. Discover our expertise in custom software development and digital transformation.')
+@section('keywords', 'about, software development company, technology solutions, digital transformation, custom software, business innovation, team expertise')
+@section('og_image', asset('images/logo_02.png'))
 
 @section('content')
 <section class="hero" style="background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%); padding: 2rem 0; text-align: center;">
@@ -14,7 +16,7 @@
 <div class="container">
     <!-- Mission Section -->
     <section style="background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 3rem; margin: 3rem 0; text-align: center;">
-        <img src="{{ asset('images/our_mission_01.png') }}" alt="Our Mission" style="max-width: 400px; height: auto; margin-bottom: 2rem;">
+        <img src="{{ asset('images/our_mission_01.png') }}" alt="Our Mission" style="max-width: 400px; height: auto; margin-bottom: 2rem;" loading="lazy" width="400" height="300">
         <p style="font-size: 1.2rem; color: #666; line-height: 1.6; max-width: 800px; margin: 0 auto;">
             We specialize in creating custom web solutions for diverse industries including pet services, 
             art portfolios, wellness platforms, and environmental services. Our 13+ projects (including 9+ active websites) demonstrate 
