@@ -10,7 +10,12 @@ class SitemapController extends Controller
 {
     public function index()
     {
-        $brands = Brand::all();
+        try {
+            $brands = Brand::all();
+        } catch (\Exception $e) {
+            // If brands table doesn't exist or has issues, return empty sitemap
+            $brands = collect();
+        }
         
         $sitemap = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
         $sitemap .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
